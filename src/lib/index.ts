@@ -1,41 +1,33 @@
 import * as PIXI from 'pixi.js-legacy'
 window.PIXI = PIXI
 
-export function drawCircle(parent: PIXI.Container){
-    return parent.addChild(
-        new PIXI.Graphics()
-        .beginFill(0x1c1c1c)
-        .drawCircle(0, 0, 200)
-        .endFill()
-    )
-}
 export module PixiAsset{
-    export const AAA = 50
+    
+    export class AssetLoader{
+        
+        private static loader: PIXI.Loader
+        public static init(App: PIXI.Application){
+            this.loader = App.loader
+        }
 
-    export function sum(a: number): number{
-        return a + AAA
-    }
+        
+        public static async loadAssets(...urls: Array<string | PIXI.IAddOptions>){
+            return new Promise<void>(res =>{
+                this.loader.add(urls)
+                .load(async (_, resource) =>{
+                    // ToDo 處理圖片
+                    await this.parseAsset(Object.values(resource))
+                    res()
+                })
+            })
+        }
 
-    class M_ClassA{
+        public static getAssets(...keys: Array<string>){
+            return keys.map(key => this.loader.resources[key] || console.log(`getAssets not found "${key}"`))
+        }
 
-    }
+        private static async parseAsset(...assets){
 
-    export class M_ClassB{
-        private a: number = 10
-    }
-}
-
-export class TestClass{
-    private a: number = 1
-    public b: string = 'public string'
-
-    private priFn(a: number): number{
-        console.log('private function', a)
-        return a
-    }
-
-    public pubFn(a: number): string{
-        console.log('public func', a)
-        return `it's a public func`
+        }
     }
 }
