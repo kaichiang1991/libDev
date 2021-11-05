@@ -2,6 +2,7 @@ const common = require('./webpack.common')
 const {merge} = require('webpack-merge')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = merge(common, {
     mode: 'development',
@@ -35,6 +36,11 @@ module.exports = merge(common, {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'template.cshtml'
+        }),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [
+                path.resolve(__dirname, 'types/**')
+            ]
         })
     ]
 })

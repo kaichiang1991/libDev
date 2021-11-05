@@ -4,7 +4,7 @@ module.exports = {
     resolve: {
         alias: {
             '@': __dirname,
-            'Assets': path.resolve(__dirname, 'src/assets')
+            'Assets': path.resolve(__dirname, 'assets')
         },
         extensions: ['.js', '.ts']
     },

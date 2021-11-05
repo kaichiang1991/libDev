@@ -2,6 +2,7 @@ const common = require('./webpack.common')
 const {merge} = require('webpack-merge')
 const path = require('path')
 const ReplaceInFileWebpackPlugin = require('replace-in-file-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = merge(common, {
     mode: 'production',
@@ -39,6 +40,11 @@ module.exports = merge(common, {
                 { search: /export /g, replace: '' },            // 拿掉 export
                 { search: /import.*(\r)?\n/g, replace: ''}      // 拿掉 import
             ]
-        }])
+        }]),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [
+                path.resolve(__dirname, 'types/**')
+            ]
+        })
     ]
 })
