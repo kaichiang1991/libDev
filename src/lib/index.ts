@@ -69,6 +69,7 @@ export module PixiAsset{
         
         private static loader: PIXI.Loader
         public static init(App: PIXI.Application){
+            console.log(`%c${PACKAGE_NAME}`, 'font-weight: bolder; font-size: 24px', `version ${PACKAGE_VERSION}`)
             this.loader = App.loader
         }
 

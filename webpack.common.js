@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
     resolve: {
@@ -21,6 +22,13 @@ module.exports = {
             }
         ]
     },
+
+    plugins: [
+        new webpack.DefinePlugin({
+            'PACKAGE_NAME': JSON.stringify(process.env.npm_package_name),
+            'PACKAGE_VERSION': JSON.stringify(process.env.npm_package_version)
+        })
+    ],
 
     externals: {
         'pixi.js-legacy': 'PIXI'
