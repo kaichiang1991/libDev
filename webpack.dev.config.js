@@ -50,11 +50,6 @@ module.exports = merge(common, {
                     !libPaths.length? []: libPaths.map(_path => path.join('lib', _path, 'index.min.js'))    // 自己開發的lib
                 )
             }
-        }),
-        new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: [
-                path.resolve(__dirname, 'types/**')
-            ]
         })
     ]
 })
