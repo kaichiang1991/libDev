@@ -8,5 +8,6 @@
 <body>
     <div id="div_pixi"></div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/pixi.js-legacy@6.2.0/dist/browser/pixi-legacy.min.js"></script>
+<% for (var chunk in htmlWebpackPlugin.options.files.js) { %>
+<script src="<%= htmlWebpackPlugin.options.files.js[chunk] %>"></script><% } %>
 </html>

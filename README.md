@@ -1,5 +1,11 @@
 # Lib 開發
 - 打包後變成 window 物件
+- 開發入口
+    - src/lib/index.ts  .
+        - Lib開發的入口，會打包出去
+        - 要使用到內部的 assets 再把 lazyload function 取消註解
+    - src/index.ts
+        - Lib 測試的入口，不會打包出去
 
 ## 注意事項
 - 沒有被包裹起來的 function 要使用 export 才可以給外部使用
@@ -14,3 +20,10 @@
 - 這裡使用到 
     PACKAGE_NAME = process.env.npm_package_name
     PACKAGE_VERSION = process.env.npm_package_version
+
+## webpack
+- 外部檔案
+    - buildTool/externalsPaths  定義外部 CDN 連結
+    - buildTool/libPaths        定義自定義開發的lib位置
+- 手動搬移要使用的lib到 lib/ 資料夾內
+- 格式要符合 [LibName]/index.min.js

@@ -32,26 +32,4 @@ dom.appendChild(App.view);
 
 (async ()=>{
 
-    PixiAsset.AssetLoader.init(App)
-    const [particle, skel] = await lazyload('particle.png', 'skeleton.png')
-    await PixiAsset.AssetLoader.loadAssets({key: 'particle', url: particle}, {key: 'sss', url: skel})
-
-    // const [parTexture] = await PixiAsset.AssetLoader.getTexture('particle')
-    // App.stage.addChild(new Sprite(parTexture))
-    
-    PixiAsset.Sprite.create('particle', {
-        parent: App.stage,
-        name: 'sppp',
-        pos: 0,
-        anchor: new Point(0),
-        scale: 0
-    })
-
-    PixiAsset.Graphics.drawColorRoundRect(0, 0, 800, 600, 0, 0xff0000, 1, {
-        parent: App.stage
-    })
-
-    PixiAsset.Graphics.drawColorRect(0, 0, 400, 300, 0x00ff00, 1, {
-        parent: App.stage
-    })
 })()
