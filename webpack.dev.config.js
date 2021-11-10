@@ -3,7 +3,6 @@ const {merge} = require('webpack-merge')
 const path = require('path')
 const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const libPaths = require('./buildTool/libPaths')
 const externalPaths = require('./buildTool/externalsPaths')
 

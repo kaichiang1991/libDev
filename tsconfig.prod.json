@@ -16,7 +16,7 @@
   
       /* Emit */
       "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
-      "declarationDir": "./types",                           /* Specify the output directory for generated declaration files. */
+      "declarationDir": "./dist/types",                           /* Specify the output directory for generated declaration files. */
 
       /* Interop Constraints */
       // "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
@@ -26,6 +26,6 @@
       /* Completeness */
       "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
     },
-    "include": ["./src/lib/**/*", "./dev.d.ts"]
+    "include": ["./src/lib/**/*", "./dev.d.ts", "./types/*"]
   }
   

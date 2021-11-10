@@ -35,16 +35,11 @@ module.exports = merge(common, {
 
     plugins: [
         new ReplaceInFileWebpackPlugin([{
-            dir: 'types',
+            dir: './dist/types',
             rules: [
                 { search: /export /g, replace: '' },            // 拿掉 export
                 { search: /import.*(\r)?\n/g, replace: ''}      // 拿掉 import
             ]
-        }]),
-        new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: [
-                path.resolve(__dirname, 'types/**')
-            ]
-        })
+        }])
     ]
 })
