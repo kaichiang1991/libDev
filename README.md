@@ -6,7 +6,10 @@
         - 要使用到內部的 assets 再把 lazyload function 取消註解
     - src/index.ts
         - Lib 測試的入口，不會打包出去
-
+```javascript
+// 初始設定 (印出版號)
+console.log(`%c${PACKAGE_NAME}`, 'font-weight: bolder; font-size: 24px', `version ${PACKAGE_VERSION}`)
+```
 ## 注意事項
 - 沒有被包裹起來的 function 要使用 export 才可以給外部使用
 - module 裡面的內容，同樣要使用 export 才能導出
