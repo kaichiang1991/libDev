@@ -37,7 +37,7 @@ module.exports = merge(common, {
         new ReplaceInFileWebpackPlugin([{
             dir: './dist/types',
             rules: [
-                { search: /export /g, replace: '' },            // 拿掉 export
+                { search: /export ({};)?/g, replace: '' },      // 拿掉 export
                 { search: /import.*(\r)?\n/g, replace: ''}      // 拿掉 import
             ]
         }])

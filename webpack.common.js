@@ -32,6 +32,7 @@ module.exports = {
 
     externals: {
         'pixi.js-legacy': 'PIXI',
-        'pixi-spine': ['PIXI', 'spine']
+        'pixi-spine': ['PIXI', 'spine'],
+        'gsap': 'gsap'
     }
 }

@@ -1,5 +1,5 @@
 import { Application, Sprite, Point } from 'pixi.js-legacy'
-import { PixiAsset } from './lib'
+import './lib'
 
 /**
  * 動態讀取 src/assets 下的資源

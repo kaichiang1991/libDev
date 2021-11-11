@@ -1,11 +1,13 @@
 import * as PIXI from 'pixi.js-legacy'
 window.PIXI = PIXI
+import gsap from 'gsap'
+window.gsap = gsap
 
-/**
- * 動態讀取 src/assets 下的資源
- * @param {Array<string>} paths 路徑
- * @returns {Promise<Array<string>>}
- */
+// /**
+//  * 動態讀取 src/assets 下的資源
+//  * @param {Array<string>} paths 路徑
+//  * @returns {Promise<Array<string>>}
+//  */
 //  async function lazyload(...paths: Array<string>): Promise<Array<string>>{
 //     return new Promise<Array<string>>(async res =>{
 //         let result: Array<string> = new Array<string>()
